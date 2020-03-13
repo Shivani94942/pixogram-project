@@ -46,11 +46,11 @@ export class UserService {
   }
 
   getFollowing(userid: number): Observable<Object>{
-    return this.http.get(`http://localhost:8023/follow/following/`+`${userid}`)
+    return this.http.get(`http://localhost:8889/follow/following/`+`${userid}`)
   }
 
   getFollower(userid: number): Observable<Object>{
-    return this.http.get(`http://localhost:8023/follow/follower/`+`${userid}`)
+    return this.http.get(`http://localhost:8889/follow/follower/`+`${userid}`)
   }
  
   updateUser(user: UpdateModel,userid:number): Observable<Object> {
