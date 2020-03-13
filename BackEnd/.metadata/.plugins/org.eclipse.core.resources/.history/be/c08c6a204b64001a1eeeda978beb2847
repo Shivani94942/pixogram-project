@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.UploadMedia;
+
+public interface UploadMediaService {
+
+	UploadMedia createMedia(UploadMedia uploadMedia);
+
+	List<UploadMedia> getMediaByUid(int userId);
+}

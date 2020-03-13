@@ -1,0 +1,12 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Login;
+import com.example.demo.entity.User;
+
+public interface UserService {
+
+	void createLogin(Login login);
+
+	User createUser(User user);
+
+}

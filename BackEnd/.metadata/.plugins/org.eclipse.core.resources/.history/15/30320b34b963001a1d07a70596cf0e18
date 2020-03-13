@@ -1,0 +1,17 @@
+server:
+  port: 8021
+spring:
+  h2:
+    console:
+      path: /console
+      enabled: true
+      settings:
+        web-allow-others: true
+        
+=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+  datasource:
+    url: 

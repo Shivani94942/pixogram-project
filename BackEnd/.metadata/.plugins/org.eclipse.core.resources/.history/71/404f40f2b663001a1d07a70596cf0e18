@@ -1,0 +1,18 @@
+package com.example.demo.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class Login {
+
+	@Id
+	private int id;
+	private String username;
+	private String password;
+	private String profilepic;
+	
+}

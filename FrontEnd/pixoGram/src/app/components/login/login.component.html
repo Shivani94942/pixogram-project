@@ -1,0 +1,68 @@
+<div class="container-flex">
+<div class="row" style="margin-top: 30px;" >
+    <div class="col-lg-3" style="padding-top: 10px;" >
+        <li class="list-group-item" class="btn list-group-item" [routerLink]="['/login']">Login</li>
+        <li class="list-group-item" class="btn list-group-item" [routerLink]="['/register']">Register</li>
+        <!-- (click)="onSelectSubCat(subcat.subId)" -->
+    </div>
+
+
+    <div class="col-lg-9">
+
+        <div
+            style="margin: 0px 30vw 0px 10vw; border: 1px; border-radius: 15px;">
+
+
+            <!-- {{registerForm.value | json}} <br><br>
+            {{u|json}} -->
+            <hr>
+            <div>
+                <h5 style="text-align: center;">Login</h5>
+            </div>
+
+            <hr>
+            <form [formGroup]="loginForm" (ngSubmit)="onlogin(loginForm.value)">
+                <div class="form-group">
+                    <input [class.is-invalid]="loginForm.get('userName1').invalid && loginForm.get('userName1').touched"
+                        formControlName="userName1" type="text" class="form-control"
+                        placeholder="User Name">
+                    <div id="label1" *ngIf="loginForm.get('userName1').invalid && loginForm.get('userName1').touched">
+                        <small *ngIf="loginForm.get('userName1').errors?.minlength" class="text-danger">Minimum 3
+                            character
+                            required</small>
+                        <small *ngIf="loginForm.get('userName1').errors?.required" class="text-danger">Name is
+                            required</small>
+                        <!-- <small *ngIf="loginForm.get('userName1').errors?.forbiddenName"
+                        class="text-danger">{{userName1.errors?.forbiddenName.value}}
+                        userName1Name not allowed</small> -->
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <input [class.is-invalid]="loginForm.get('password').invalid && loginForm.get('password').touched"
+                        formControlName="password" type="password" class="form-control"
+                        placeholder="Password">
+                    <div id="label1" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+                        <small *ngIf="loginForm.get('password').errors?.required" class="text-danger">Password is
+                            required</small>
+                        <small *ngIf="loginForm.get('password').errors?.minlength" class="text-danger">Minimum 8
+                            character
+                            required</small>
+                        <small *ngIf="loginForm.get('password').errors?.maxlength" class="text-danger">Maximum 12 
+                                character
+                                exceeded</small>    
+                    </div>
+                </div>
+
+                <button class="btn  btn btn-warning" [disabled]="!loginForm.valid" id="button1">Login</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+</div>

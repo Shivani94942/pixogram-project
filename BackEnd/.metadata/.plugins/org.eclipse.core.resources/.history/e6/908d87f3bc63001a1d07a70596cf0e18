@@ -1,0 +1,30 @@
+server:
+  port: 8021
+spring:
+  h2:
+    console:
+      path: /console
+      enabled: true
+      settings:
+        web-allow-others: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: user-service
+    
+    
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pixogram
+    username: root
+    password: 
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    
+  application:
+    name: user-service

@@ -1,0 +1,11 @@
+package com.example.demo.entity;
+
+import javax.persistence.Entity;
+
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor
+public class Follow {
+
+}

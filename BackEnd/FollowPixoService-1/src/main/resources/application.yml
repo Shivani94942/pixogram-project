@@ -1,0 +1,20 @@
+server:
+  port: 8889
+spring:
+  h2:
+    console:
+      path: /h2
+      enabled: true
+      settings:
+        web-allow-others: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    
+  application:
+    name: follow-service
+    
+   
+

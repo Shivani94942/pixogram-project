@@ -1,0 +1,32 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Login;
+import com.example.demo.entity.User;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public void createLogin(Login login) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User createUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Login getByUsername(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

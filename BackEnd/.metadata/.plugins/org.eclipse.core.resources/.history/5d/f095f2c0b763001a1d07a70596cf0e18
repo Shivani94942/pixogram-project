@@ -1,0 +1,43 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Login;
+import com.example.demo.entity.User;
+import com.example.demo.repository.LoginRepository;
+import com.example.demo.repository.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserRepository userRepository;
+	@Autowired
+	LoginRepository loginRepository;
+	
+	@Override
+	public Login createLogin(Login login) {
+		return loginRepository.save(login);
+		
+	}
+
+	@Override
+	public User createUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Login getByUsername(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

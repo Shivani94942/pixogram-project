@@ -1,0 +1,10 @@
+package com.example.demo.entity;
+
+public class Login {
+
+	@Id
+	private int id;
+	private String username;
+	private String password;
+	private String profilepic;
+}

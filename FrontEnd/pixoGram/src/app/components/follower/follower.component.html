@@ -1,0 +1,38 @@
+<div style="padding: 10px; margin: 0px 0px 0px 90px;">
+
+    <!--             class="col-lg-11" -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#" [routerLink]="['/follow']"> Following </a>
+            <a class="nav-link active" data-toggle="tab" href="#" [routerLink]="['/follower']"> Follower </a>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="card" style="width: 16rem; margin: 15px;" *ngFor="let p of arrofmedia">
+        <!-- </div>*ngFor="let p of media"> -->
+            <div class="row">
+                <div class="col col-sm-3">
+                    <img src="../assets/heart.svg" width=25px>
+                </div>
+                <div class="col col-sm-3">
+                    <img src="../assets/dislike.svg" width="25px">
+                </div>
+                <div class="col col-sm-3">
+                    <img src="../assets/comment.svg" width=25px>
+                </div>
+                {{p.username}}
+            </div>
+
+            <div style="height: 280px;"><br>
+                <img class="card-img-top" [routerLink]="['/mediadetails']"  (click) = "getId(p.id)" src="{{p.url}}" alt="Card image cap" width="50" height="250">
+                <!-- {{p.url}} -->
+            </div>
+            <div class="card-body">
+                <h5 style="text-align: center;" class="card-title">{{p.title}}</h5>
+               <!--  {{p.title}} -->
+                        
+
+            
+            </div>
+        </div>

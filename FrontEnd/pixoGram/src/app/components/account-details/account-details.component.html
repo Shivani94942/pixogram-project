@@ -1,0 +1,115 @@
+<div class="container-flex">
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-lg-3">
+      <div class="bg-light border-right" id="sidebar-wrapper">
+
+        <a [routerLink]="['/newsfeed']" class="list-group-item btn list-group-item">News Feed</a>
+        <a [routerLink]="['/blockuser']" class="list-group-item btn list-group-item ">Blocked Accounts</a>
+        <a [routerLink]="['/accountdetails']" class="list-group-item btn list-group-item ">Account update</a>
+        <a [routerLink]="['/search']" class="list-group-item btn list-group-item ">Search</a>
+        <a [routerLink]="['/login']" (click)="logout()" class="list-group-item btn list-group-item ">Logout</a>
+
+      </div>
+    </div>
+
+    <div class="col-9 col-md-8">
+
+      <hr>
+      <div>
+        <h5 style="text-align: center;">Account Update</h5>
+      </div>
+
+      <hr>
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+
+
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="username" class="col-form-label">UserName</label>
+            <input [(ngModel)]="username"
+              [class.is-invalid]="updateForm.get('username').invalid && updateForm.get('username').touched"
+              formControlName="username" name="username" type="text" id="username" class="form-control"
+              placeholder="User Name" required />
+            <!-- pattern="^[a-z0-9_-]{8,12}$" -->
+            <div id="label1" *ngIf="updateForm.get('username').invalid && updateForm.get('username').touched">
+              <small *ngIf="updateForm.get('username').errors?.minlength" class="text-danger">Minimum 8
+                character
+                required</small>
+              <small *ngIf="updateForm.get('username').errors?.maxlength" class="text-danger">Minimum 12
+                character
+                required</small>
+              <small *ngIf="updateForm.get('username').errors?.required" class="text-danger">User
+                Name is
+                required</small>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="col-form-label">Email</label>
+          <input [(ngModel)]="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" type="email"
+            id="email" [class.is-invalid]="updateForm.get('email').invalid && updateForm.get('email').touched"
+            class="form-control" formControlName="email" placeholder="Email">
+
+          <div
+            *ngIf="updateForm.get('email').errors && (updateForm.get('email').invalid && updateForm.get('email').touched)">
+            <small class="text-danger" *ngIf="updateForm.get('email').errors.required">email field is
+              required</small>
+            <small class="text-danger" *ngIf="updateForm.get('email').errors.pattern">please provide a
+              valid
+              email address <b>(example@asd.com) </b></small>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="form-group row">
+          <div class="form-group col-md-6">
+            <label for="password" class="col-form-label">New Password</label>
+            <input [(ngModel)]="password"
+              [class.is-invalid]="updateForm.get('password').invalid && updateForm.get('password').touched"
+              formControlName="password" type="password" class="form-control" placeholder="Password" />
+            <div id="label1" *ngIf="updateForm.get('password').invalid && updateForm.get('password').touched">
+              <small *ngIf="updateForm.get('password').errors?.required" class="text-danger">Password is
+                required</small>
+              <small *ngIf="updateForm.get('password').errors?.minlength" class="text-danger">Minimum 8
+                character
+                required</small>
+              <small *ngIf="updateForm.get('password').errors?.maxlength" class="text-danger">Maximum 12
+                character
+                exceeded</small>
+              <br>
+              <small *ngIf="updateForm.get('password').errors?.pattern" class="text-danger">Use an alphanumeric
+                password</small>
+            </div>
+
+
+          </div>
+          <div class="form-group col-md-6">
+            <label for="confirmpassword" class="col-form-label">Confirm Password</label>
+            <input [(ngModel)]="confirmpassword" type="password" id="confirmpassword" formControlName="confirmpassword"
+              class="form-control" placeholder="Confirm Password" />
+            <div id="label1"
+              *ngIf="updateForm.get('confirmpassword').hasError('passwordNotMatch') && updateForm.get('confirmpassword').invalid && updateForm.get('confirmpassword').touched">
+              <small *ngIf="updateForm.get('confirmpassword').errors?.required" class="text-danger">password is
+                required</small>
+              <small *ngIf="updateForm.get('confirmpassword').errors?.passwordNotMatch" class="text-danger">password
+                mismatch</small>
+            </div>
+          </div>
+
+        </div>
+        <button [disabled]="!updateForm.valid" class="btn btn-warning">
+          Update
+        </button>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>

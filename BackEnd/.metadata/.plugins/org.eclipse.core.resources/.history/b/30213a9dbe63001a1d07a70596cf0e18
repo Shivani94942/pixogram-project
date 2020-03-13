@@ -1,0 +1,25 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UploadMediaServiceImpl {
+
+	@Autowired
+	UploadMediaService uploadMediaService;
+	
+	@Autowired
+	UploadMediaRepository uploadMediaRepository;
+
+	@Override
+	public UploadMedia createMedia(UploadMedia uploadMedia) {
+		return uploadMediaRepository.save(uploadMedia);		
+	}
+
+
+	@Override
+	public List<UploadMedia> getMediaByUid(int userId) {
+		return uploadMediaRepository.getByUid(userId);
+	}
+}

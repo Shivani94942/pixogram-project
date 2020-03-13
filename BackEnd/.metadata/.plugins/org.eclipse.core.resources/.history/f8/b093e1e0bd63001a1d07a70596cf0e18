@@ -1,0 +1,14 @@
+package com.example.demo.entity;
+
+public class UplaodMedia {
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private int uid;
+	private String title;
+	private String description;
+	private String tags;
+	private String url;
+}

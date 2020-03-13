@@ -1,0 +1,168 @@
+<div class="container-flex">
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-lg-3" style="padding-top: 10px;">
+            <li class="list-group-item" class="btn list-group-item" [routerLink]="['/login']">Login</li>
+            <li class="list-group-item" class="btn list-group-item" [routerLink]="['/register']">Register</li>
+            <!-- (click)="onSelectSubCat(subcat.subId)" -->
+        </div>
+<!-- {{registerForm.value | json}}
+ -->
+        <div class="col-lg-9" >
+
+            <div style="margin: 0px 30vw 0px 10vw; border: 1px; border-radius: 15px;">
+
+                <hr>
+                <div>
+                    <h5 style="text-align: center;">Registration</h5>
+                </div>
+
+                <hr>
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="fname" class="col-form-label">First Name</label>
+                            <input [(ngModel)]="fname"
+                                [class.is-invalid]="registerForm.get('fname').invalid && registerForm.get('fname').touched"
+                                formControlName="fname" pattern="^[A-Z].*$" name="fname" type="text" id="fname"
+                                class="form-control" placeholder="First Name" required />
+
+
+                            <div *ngIf="registerForm.get('fname').invalid && registerForm.get('fname').touched">
+                                <small *ngIf="registerForm.get('fname').errors?.minlength" class="text-danger">Minimum 3
+                                    character
+                                    required</small>
+                                <small *ngIf="registerForm.get('fname').errors?.required" class="text-danger">Name is
+                                    required</small>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lname" class="col-form-label">Last Name</label>
+                            <input [(ngModel)]="lname"
+                                [class.is-invalid]="registerForm.get('lname').invalid && registerForm.get('lname').touched"
+                                formControlName="lname" pattern="^[A-Z].*$" name="lname" type="text" id="lname"
+                                class="form-control" placeholder="Last Name" required />
+
+
+                            <div id="label1"
+                                *ngIf="registerForm.get('lname').invalid && registerForm.get('lname').touched">
+                                <small *ngIf="registerForm.get('lname').errors?.minlength" class="text-danger">Minimum 3
+                                    character
+                                    required</small>
+                                <small *ngIf="registerForm.get('lname').errors?.required" class="text-danger">Name is
+                                    required</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="username" class="col-form-label">UserName</label>
+                            <input [(ngModel)]="username"
+                                [class.is-invalid]="registerForm.get('username').invalid && registerForm.get('username').touched"
+                                formControlName="username"  name="username" type="text"
+                                id="username" class="form-control" placeholder="User Name" required />
+                                <!-- pattern="^[a-z0-9_-]{8,12}$" -->
+                            <div id="label1"
+                                *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
+                                <small *ngIf="registerForm.get('username').errors?.minlength"
+                                    class="text-danger">Minimum 8
+                                    character
+                                    required</small>
+                                <small *ngIf="registerForm.get('username').errors?.maxlength"
+                                    class="text-danger">Minimum 12
+                                    character
+                                    required</small>
+                                <small *ngIf="registerForm.get('username').errors?.required" class="text-danger">User
+                                    Name is
+                                    required</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="dob" class="col-form-label">Date of Birth</label>
+                            <input [(ngModel)]="dob"
+                                [class.is-invalid]="registerForm.get('dob').invalid && registerForm.get('dob').touched"
+                                formControlName="dob" pattern="^[a-z0-9_-]{8,12}$" name="dob" type="date" id="dob"
+                                class="form-control" placeholder="" required />
+
+                            <div id="label1" *ngIf="registerForm.get('dob').invalid && registerForm.get('dob').touched">
+                                <small *ngIf="registerForm.get('dob').errors?.required" class="text-danger">User Name is
+                                    required</small>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input [(ngModel)]="email"
+                         pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" type="email" id="email"
+                            [class.is-invalid]="registerForm.get('email').invalid && registerForm.get('email').touched"
+                            class="form-control" formControlName="email" placeholder="Email">
+
+                        <div
+                            *ngIf="registerForm.get('email').errors && (registerForm.get('email').invalid && registerForm.get('email').touched)">
+                            <small class="text-danger" *ngIf="registerForm.get('email').errors.required">email field is
+                                required</small>
+                            <small class="text-danger" *ngIf="registerForm.get('email').errors.pattern">please provide a
+                                valid
+                                email address <b>(example@asd.com) </b></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="browse" class="col-sm-5 col-form-label">Profile Picture</label>
+                        <div class="col-sm-7">
+                            <form>
+                                <input [(ngModel)]="profilepic" (change)="fileChange($event)" name="file"
+                                formControlName="profilepic" type="file">
+                            </form>
+<!--                      ng-model="file_upload"       (ngSubmit)="upload()" -->
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <div class="form-group col-md-6">
+                            <label for="password" class="col-form-label">Password</label>
+                            <input [(ngModel)]="password" [class.is-invalid]="registerForm.get('password').invalid && registerForm.get('password').touched"
+                            formControlName="password" type="password" class="form-control" placeholder="Password"/>
+                            <div id="label1" *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
+                              <small *ngIf="registerForm.get('password').errors?.required" class="text-danger">Password is
+                                  required</small>
+                              <small *ngIf="registerForm.get('password').errors?.minlength" class="text-danger">Minimum 8
+                                  character
+                                  required</small>
+                              <small *ngIf="registerForm.get('password').errors?.maxlength" class="text-danger">Maximum 12 
+                                      character
+                                      exceeded</small>
+                                      <br>
+                              <small *ngIf="registerForm.get('password').errors?.pattern" class="text-danger">Use an alphanumeric password</small>            
+                          </div>
+
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="confirmpassword" class="col-form-label">Confirm Password</label>
+                            <input [(ngModel)]="confirmpassword" type="password" id="confirmpassword" formControlName="confirmpassword" class="form-control"
+                                placeholder="Confirm Password"/>
+<div id="label1" *ngIf="registerForm.get('confirmpassword').hasError('passwordNotMatch') && registerForm.get('confirmpassword').invalid && registerForm.get('confirmpassword').touched">
+    <small *ngIf="registerForm.get('confirmpassword').errors?.required" class="text-danger">password is required</small> 
+    <small *ngIf="registerForm.get('confirmpassword').errors?.passwordNotMatch" class="text-danger">password mismatch</small> 
+</div>      
+                        </div>
+
+                    </div>
+                    <button [disabled]="!registerForm.valid"  class="btn btn-warning">
+                        Register
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- 
+    [disabled]="!registerForm.valid" -->
