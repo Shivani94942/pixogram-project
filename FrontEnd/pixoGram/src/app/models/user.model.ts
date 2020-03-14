@@ -11,4 +11,3 @@ export class UserModel{
     ){}
 }
 
-/* public dob:String, */

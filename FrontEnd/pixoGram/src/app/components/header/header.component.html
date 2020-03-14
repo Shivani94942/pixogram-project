@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-2" style="margin-top: 10px; text-align: left;">
-        <img src="../assets/logo.png" width="40vw" height="40vh" />   
-        Pixogram
+      <div class="col-sm-2" style="margin-top: 10px; text-align: left;padding-bottom: 5px;">
+        <img src="../assets/logo.png" width="40vw" height="40vh" /> &nbsp;  
+       <b>Pixogram</b> 
     </div>
       <div class="col-sm-1 col-sm-offset-1"></div>
       <div class="col-sm-6">
@@ -10,13 +10,13 @@
             <div class="navbar-nav mx-auto" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#" routerLink="uploadmedia">Upload Media<span class="sr-only">(current)</span></a>
+                  <a class="nav-link fas fa-cloud-upload-alt" aria-hidden="false" href="#" routerLink="uploadmedia">&nbsp;Upload Media<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" routerLink="mymedia">My Media</a>
+                  <a class="nav-link fas fa-images" href="#" routerLink="mymedia">&nbsp;My Media</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" routerLink="follow">Followers/Following</a>
+                  <a class="nav-link fas fa-users" href="#" routerLink="follow">&nbsp;Followers/Following</a>
                 </li>
               </ul>
             </div>
@@ -24,8 +24,10 @@
       </div>
       <div class="col-sm-1 col-sm-offset-1"></div>
       <div class="col-sm-2" style="text-align: right; margin-top: 15px;">
-        <a href="#" style="text-decoration:none" routerLink="newsfeed">Account</a>
-        <img src="{{ userpic }}" onerror="this.onerror=null; this.src='../assets/account.svg'"  width="30vw" style="margin-left: 5px;"/>
+        <a href="#" style="color: black;" routerLink="newsfeed"><b>Account</b></a>&nbsp;
+        <img src="{{ userpic }}" onerror="this.onerror=null; this.src='../assets/account.svg'"  width="30vw" style="margin-left: 5px; border-radius: 2px;"/>
+        <br>
+        <small>{{username}}</small>
       </div>
     </div>
     

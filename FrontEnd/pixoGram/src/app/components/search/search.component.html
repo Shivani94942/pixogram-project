@@ -5,11 +5,11 @@
   <div class="col-lg-3">
     <div class="bg-light border-right" id="sidebar-wrapper">
         
-      <a [routerLink]="['/newsfeed']" class="list-group-item btn list-group-item">News Feed</a>
-      <a [routerLink]="['/blockuser']" class="list-group-item btn list-group-item ">Blocked Accounts</a>
-      <a [routerLink]="['/accountdetails']" class="list-group-item btn list-group-item ">Account update</a>
-      <a [routerLink]="['/search']" class="list-group-item btn list-group-item ">Search</a>
-      <a [routerLink]="['/login']" (click)="logout()" class="list-group-item btn list-group-item ">Logout</a>
+      <a [routerLink]="['/newsfeed']" class="list-group-item btn list-group-item"><b style="color: peru;"> News Feed</b></a>
+      <a [routerLink]="['/blockuser']" class="list-group-item btn list-group-item "><b style="color: peru;">Blocked Accounts</b></a>
+      <a [routerLink]="['/accountdetails']" class="list-group-item btn list-group-item "><b style="color: peru;">Account update</b></a>
+      <a [routerLink]="['/search']" class="list-group-item btn list-group-item "><b style="color: peru;">Search</b></a>
+      <a [routerLink]="['/login']" (click)="logout()" class="list-group-item btn list-group-item "><b style="color: peru;">Logout</b></a>
 
   </div>
   </div>
@@ -21,22 +21,14 @@
              aria-label="Search"/> 
             </div>  
             <p *ngIfThen="isDisabled; then: searchResult; else: noResult"></p>            
-      <button class="btn btn-primary" (click)="searchUser(username.value)" (click)="searchResult==true" (click)="noResult==true">Search</button>
+      <button class="btn btn-warning" (click)="searchUser(username.value)" (click)="searchResult==true" (click)="noResult==true">Search</button>
     </form>
 
 
 
 
     
-  <!--   <button class="btn btn-primary" (click)="para1=true" (click)="para2=false" (dblclick)="para1=false">para1</button>&nbsp;&nbsp;&nbsp;
-    <button class="btn btn-primary" (click)="para2=true" (click)="para1=false" (dblclick)="para2=false">para2</button>
-    <div *ngIf="para1">
-        <p>para1 --sdjgkjskljg</p>  
-    </div>
-    <div *ngIf="para2">
-        <p>para2 --ksjkgjskjklnmk</p>
-    </div>
- -->
+  
 
 
 
@@ -46,7 +38,7 @@
  <div *ngIf="noResult">
   <div style="padding: 10px; margin: 0px 0px 0px 90px;">
 
-    <!--             class="col-lg-11" -->
+    
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#"> Result </a>
@@ -57,7 +49,7 @@
     <div class="row">
 
         <div class="card" style="width: 16rem; margin: 15px;" >
-        <!-- </div>*ngFor="let p of media">    -->
+        
         <h5>No profile with that name</h5>
             
         </div>
@@ -75,7 +67,7 @@
     <div *ngIf="searchResult">
   <div style="padding: 10px; margin: 0px 0px 0px 90px;">
 
-    <!--             class="col-lg-11" -->
+    
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#"> Result </a>
@@ -86,8 +78,7 @@
     <div class="row">
 
         <div class="card" style="width: 16rem; margin: 15px;" >
-        <!-- </div>*ngFor="let p of media">    -->
-
+        
             <div style="height: 280px;"><br>
                 <img class="card-img-top" src="{{ user.profilepic }}" alt="Profile pic" width="50" height="250">
        
@@ -96,8 +87,8 @@
                 <h5 style="text-align: center;" class="card-title">{{ user.username }}</h5>
             
                 <div class="btn-group">
-                    <button type="button" class="btn btn-primary" (click)="follow(user.id)">Follow</button>
-                    <button type="button" class="btn btn-primary">UnFollow</button>
+                    <button type="button" class="btn btn-warning" (click)="follow(user.id)">Follow</button>&nbsp;
+                    <button type="button" class="btn btn-warning">UnFollow</button>
                   </div>              
             </div>
             

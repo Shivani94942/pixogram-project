@@ -18,12 +18,13 @@ import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 import { UploadMediaComponent } from './components/upload-media/upload-media.component';
+import { FollowerComponent } from './components/follower/follower.component';
 
 
 //firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { FollowerComponent } from './components/follower/follower.component';
+
 
 //custom pipe
 import { ReversePipe } from './reverse.pipe'

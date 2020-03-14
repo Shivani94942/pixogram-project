@@ -18,7 +18,8 @@ export class BlockUserComponent implements OnInit {
   }
   logout(){
     sessionStorage.clear();
-    console.log("logout")
+    console.log("logout");
+    alert("Logged out successfully...");
   }
 
 }

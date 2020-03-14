@@ -6,26 +6,26 @@
         <a class="nav-link active" data-toggle="tab" > Single Media </a>
       </li>
     </ul>
-  
+    
     <div class="tab-content">
       
       <div id="singleMedia" class="container tab-pane active">
         <br>
-        <h1 class="text-center"> Upload Single Media File </h1>
+        <h1 class="text-center fas fa-cloud-upload-alt"> Upload Single Media File </h1>
   
         <form class="py-5"  [formGroup]="uploadMediaForm" (ngSubmit)="onSubmitMedia()" >
           <div class="form-group row">
             <label for="postPic" class="col-sm-2 col-form-label"> Post Media </label>
             <div class="col-sm-10">
               <form>
-<!--                 (ngSubmit)="uploadMedia()"  -->
+
                 <input [(ngModel)]="postPic" (change)="uploadMedia($event)" id="postPic" formControlName="postPic" name="postPic" type="file">
                 
               </form>
-              <input type="submit" class="field btn btn-info" value="Upload">
+              <input type="submit" class="field btn btn-warning" value="Upload">
             </div>   
           </div>
-<!--           (change)="fileChange($event)" -->
+
 
           <div class="form-group row">
             <label for="title" class="col-sm-2 col-form-label"> Title </label>

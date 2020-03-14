@@ -8,3 +8,6 @@ input[type=text]
   border-radius: 4px;
   box-sizing: border-box;
 }
+.list-group-item:hover{
+  background-color: gray;
+}

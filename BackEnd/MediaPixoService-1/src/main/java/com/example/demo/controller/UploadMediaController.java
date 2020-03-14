@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import java.io.IOException;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,13 +28,8 @@ public class UploadMediaController {
 	UploadMediaService uploadMediaService;
 	
 	@PostMapping("/media/create/{userId}/{userName}")
-	public UploadMedia createMedia(@RequestBody UploadMedia media,@PathVariable int userId, @PathVariable String userName) throws IOException {
-		/*
-		 * SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		 * Date date = new Date(); String d = formatter.format(date);
-		 * System.out.println(d);
-		 * 
-		 */
+	public UploadMedia createMedia(@RequestBody UploadMedia media,@PathVariable int userId, @PathVariable String userName){
+		
 		
 		 Date date = Calendar.getInstance().getTime();  
          DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
@@ -46,11 +41,11 @@ public class UploadMediaController {
     }
 
 	 @GetMapping("/media/uid/{userId}")
-	 public List<UploadMedia> getAllUserMedia(@PathVariable int userId) throws IOException {	 
+	 public List<UploadMedia> getAllUserMedia(@PathVariable int userId){	 
 		 return uploadMediaService.getMediaByUid(userId);
 	 }
 	 @GetMapping("/media/id/{userId}")
-	 public Optional<UploadMedia> getUserMedia(@PathVariable int userId) throws IOException {	 
+	 public Optional<UploadMedia> getUserMedia(@PathVariable int userId){	 
 		 return uploadMediaService.getMediaById(userId);
 	 }
  

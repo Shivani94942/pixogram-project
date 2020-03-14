@@ -54,32 +54,7 @@ export class UploadMediaComponent implements OnInit {
   }
 
   selectedFiles: FileList;
-  /* fileChange(event: any) {
-   let reader = new FileReader();
-   if(event.target.files && event.target.files.length > 0) {
-     this.file = event.target.files[0];
-   }
- }
-
-   uploadMedia() {
-     console.log("uploaded")
-     let body = new FormData();
-     body.append("file", this.file);
-     this.uploadService.storeMedia(body, 1).subscribe((data) => { console.log(data) },
-       error => console.log(error), () => { console.log("completed") }
-     );
-   } */
-
-  // uploadMedia() {
-
-  // const file = this.selectedFiles.item(0);
-  // this.uploadService.uploadFile(file);
-  // }
-
-  /* fileChange(event) {
-   this.selectedFiles = event.target.files;
-   }  */
-
+  
   //firebase upload
 
   uploadMedia(event) {
@@ -88,14 +63,13 @@ export class UploadMediaComponent implements OnInit {
       .substring(2);
     this.ref = this.afStorage.ref(id);
     this.task = this.ref.put(event.target.files[0]);
-    // this.getDownloadURL = this.ref.getDownloadURL();
-    // console.log(this.getDownloadURL);
+    
     this.task
       .snapshotChanges()
       .pipe(
         finalize(() => {
           this.ref.getDownloadURL().subscribe(url => {
-            console.log(url); // <-- do what ever you want with the url..
+            console.log(url); 
 
             console.log(url); // <-- do what ever you want with the url..
             this.postPic=url;
@@ -109,7 +83,7 @@ export class UploadMediaComponent implements OnInit {
 
 
         onSubmitMedia(){
-          //console.log(this.uploadMediaForm.value);
+          
             let username1 =sessionStorage.getItem("username")
             console.log(username1)
 

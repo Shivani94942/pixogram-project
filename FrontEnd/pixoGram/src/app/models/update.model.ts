@@ -9,4 +9,3 @@ export class UpdateModel {
     ) { }
 }
 
-/* public dob:String, */

@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import java.io.IOException;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,18 +22,18 @@ public class FollowController {
 	FollowService followService;
 	
 	@PostMapping("/follow/create")
-	public Follow createFollower(@RequestBody Follow follow) throws IOException {
+	public Follow createFollower(@RequestBody Follow follow){
     	
 		return followService.createFollower(follow);
     }
 
 	 @GetMapping("/follow/following/{myid}")
-	 public List<Follow> getFollwer(@PathVariable int myid) throws IOException {	 
+	 public List<Follow> getFollwer(@PathVariable int myid){	 
 		 return followService.getFollowerByMyid(myid);
 	 }
 	 
 	 @GetMapping("/follow/follower/{userid}")
-	 public List<Follow> getFollwing(@PathVariable int userid) throws IOException {	 
+	 public List<Follow> getFollwing(@PathVariable int userid){	 
 		 return followService.getFollowingByUserid(userid);
 	 }
 }

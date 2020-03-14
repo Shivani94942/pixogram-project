@@ -1,3 +1,7 @@
+.container-fluid{
+    background-color: rgb(167, 157, 157);
+}
+
 .navbar.center .navbar-inner {
     text-align: center;
 }

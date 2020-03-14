@@ -15,8 +15,6 @@ public interface UserService {
 
 	Login getByUsername(String name);
 
-	/* Login updateUser(User u1, Login l1); */
-
 	Optional<User> findById(int id);
 
 	Optional<Login> findLoginById(int id);

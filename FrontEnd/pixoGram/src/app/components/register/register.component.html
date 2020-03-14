@@ -3,15 +3,14 @@
         <div class="col-lg-3" style="padding-top: 10px;">
             <li class="list-group-item" class="btn list-group-item" [routerLink]="['/login']">Login</li>
             <li class="list-group-item" class="btn list-group-item" [routerLink]="['/register']">Register</li>
-            <!-- (click)="onSelectSubCat(subcat.subId)" -->
+            
         </div>
-<!-- {{registerForm.value | json}}
- -->
+
         <div class="col-lg-9" >
 
             <div style="margin: 0px 30vw 0px 10vw; border: 1px; border-radius: 15px;">
 
-                <hr>
+                
                 <div>
                     <h5 style="text-align: center;">Registration</h5>
                 </div>
@@ -62,7 +61,7 @@
                                 [class.is-invalid]="registerForm.get('username').invalid && registerForm.get('username').touched"
                                 formControlName="username"  name="username" type="text"
                                 id="username" class="form-control" placeholder="User Name" required />
-                                <!-- pattern="^[a-z0-9_-]{8,12}$" -->
+                                
                             <div id="label1"
                                 *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
                                 <small *ngIf="registerForm.get('username').errors?.minlength"
@@ -87,7 +86,7 @@
                                 class="form-control" placeholder="" required />
 
                             <div id="label1" *ngIf="registerForm.get('dob').invalid && registerForm.get('dob').touched">
-                                <small *ngIf="registerForm.get('dob').errors?.required" class="text-danger">User Name is
+                                <small *ngIf="registerForm.get('dob').errors?.required" class="text-danger">Date of Birth is
                                     required</small>
                             </div>
 
@@ -118,7 +117,7 @@
                                 <input [(ngModel)]="profilepic" (change)="fileChange($event)" name="file"
                                 formControlName="profilepic" type="file">
                             </form>
-<!--                      ng-model="file_upload"       (ngSubmit)="upload()" -->
+
                         </div>
                     </div>
 
@@ -135,7 +134,7 @@
                               <small *ngIf="registerForm.get('password').errors?.minlength" class="text-danger">Minimum 8
                                   character
                                   required</small>
-                              <small *ngIf="registerForm.get('password').errors?.maxlength" class="text-danger">Maximum 12 
+                              <small *ngIf="registerForm.get('password').errors?.maxlength" class="text-danger">Maximum 15 
                                       character
                                       exceeded</small>
                                       <br>
@@ -155,7 +154,7 @@
                         </div>
 
                     </div>
-                    <button [disabled]="!registerForm.valid"  class="btn btn-warning">
+                    <button [disabled]="!registerForm.valid"  class="btn btn-info">
                         Register
                     </button>
 
@@ -164,5 +163,3 @@
         </div>
     </div>
 
-<!-- 
-    [disabled]="!registerForm.valid" -->

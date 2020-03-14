@@ -32,14 +32,13 @@ export class FollowerComponent implements OnInit {
     for(let i=0;this.fllwmodel.length;i++){
       console.log(this.fllwmodel[i].userid)
 
-      this.uploadService.getUserMedia(Number(this.fllwmodel[i].userid)).subscribe(
+      this.uploadService.getUserMedia(Number(this.fllwmodel[i].myid)).subscribe(
         src => {
           console.log(src);
           this.media = src;
           this.arrofmedia = this.arrofmedia.concat(this.media);
           console.log(i + this.arrofmedia)
-          /* this.myMedia=JSON.stringify(src);
-      console.log(this.myMedia) */
+          
         },
         error => console.log(error),
         () => {
@@ -55,29 +54,7 @@ export class FollowerComponent implements OnInit {
 )
     
   
-console.log(this.arrofmedia+"jkjdsah");    
-    
-    
-  
-    
- 
-  //displaing follwers media
- /*  this.uploadService.getUserMedia(uid).subscribe(
-    src => {
-      console.log(src);
-      this.media = src;
-      /* this.myMedia=JSON.stringify(src);
-  console.log(this.myMedia) 
-    },
-    error => console.log(error),
-    () => {
-      console.log("completed");
-    }
-  ); */
-
-
-
-    
+console.log(this.arrofmedia+"xcb");   
 
   }
 

@@ -2,12 +2,12 @@
   <div class="row" style="margin-top: 30px;">
     <div class="col-lg-3">
       <div class="bg-light border-right" id="sidebar-wrapper">
-
-        <a [routerLink]="['/newsfeed']" class="list-group-item btn list-group-item">News Feed</a>
-        <a [routerLink]="['/blockuser']" class="list-group-item btn list-group-item ">Blocked Accounts</a>
-        <a [routerLink]="['/accountdetails']" class="list-group-item btn list-group-item ">Account update</a>
-        <a [routerLink]="['/search']" class="list-group-item btn list-group-item ">Search</a>
-        <a [routerLink]="['/login']" (click)="logout()" class="list-group-item btn list-group-item ">Logout</a>
+          <!-- Sidebar -->
+        <a [routerLink]="['/newsfeed']" class="list-group-item btn list-group-item"><b style="color: peru;"> News Feed</b></a>
+        <a [routerLink]="['/blockuser']" class="list-group-item btn list-group-item "><b style="color: peru;">Blocked Accounts</b></a>
+        <a [routerLink]="['/accountdetails']" class="list-group-item btn list-group-item "><b style="color: peru;">Account update</b></a>
+        <a [routerLink]="['/search']" class="list-group-item btn list-group-item "><b style="color: peru;">Search</b></a>
+        <a [routerLink]="['/login']" (click)="logout()" class="list-group-item btn list-group-item "><b style="color: peru;">Logout</b></a>
 
       </div>
     </div>
@@ -30,7 +30,7 @@
               [class.is-invalid]="updateForm.get('username').invalid && updateForm.get('username').touched"
               formControlName="username" name="username" type="text" id="username" class="form-control"
               placeholder="User Name" required />
-            <!-- pattern="^[a-z0-9_-]{8,12}$" -->
+            
             <div id="label1" *ngIf="updateForm.get('username').invalid && updateForm.get('username').touched">
               <small *ngIf="updateForm.get('username').errors?.minlength" class="text-danger">Minimum 8
                 character
@@ -103,7 +103,7 @@
           </div>
 
         </div>
-        <button [disabled]="!updateForm.valid" class="btn btn-warning">
+        <button [disabled]="!updateForm.valid" class="btn btn-info">
           Update
         </button>
 

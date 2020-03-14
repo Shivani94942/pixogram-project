@@ -37,12 +37,7 @@ public class UserServiceImpl implements UserService {
 	public Login getByUsername(String name) {
 		return loginRepository.getByUsername(name);
 	}
-	/*
-	 * @Override public Login updateUser(User u1, Login l1) { // TODO Auto-generated
-	 * method stub return loginRepository.save(u1);
-	 * 
-	 * }
-	 */
+	
 
 	@Override
 	public Optional<User> findById(int id) {

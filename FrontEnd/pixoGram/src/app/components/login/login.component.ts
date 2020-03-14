@@ -30,10 +30,10 @@ export class LoginComponent implements OnInit {
   loginuser:LoginModel;
 
   constructor(private fb: FormBuilder,private router: Router,private userService: UserService) {
-  //  this.userService.getUsers().subscribe(response => this.users = response);
+  
     this.loginForm = fb.group({
       'userName1': ['', [Validators.required, Validators.minLength(3)]],
-      'password': ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]],
+      'password': ['', [Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
 
     });
   }
@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
 
     if(this.loginuser.password==data.password){
       console.log("login successfull")
+      alert("Logged into : "+data.userName1);
       
       sessionStorage.setItem("auth","true");
       sessionStorage.setItem("userpic",this.loginuser.profilepic);

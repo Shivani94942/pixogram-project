@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
       'username': [null, [Validators.required, Validators.minLength(3)]],
       'dob': [null, [Validators.required, Validators.minLength(3)]],
       'email': [null, [Validators.required, Validators.minLength(3)]],
-      'password': [null, [Validators.required, Validators.minLength(8),Validators.maxLength(12), Validators.pattern('(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}')]],
+      'password': [null, [Validators.required, Validators.minLength(8),Validators.maxLength(15), Validators.pattern('(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}')]],
       'confirmpassword':[null, [Validators.required]],
       'profilepic':[null]
     },
@@ -63,23 +63,23 @@ export class RegisterComponent implements OnInit {
     
     this.submitted = true;
     let user = new UserModel(this.fname, this.lname, this.username, this.password, this.email,this.profilepic);
-    /* ,this.dob */
+   
     console.log("reg comp")
     console.log(user)
 
     this.userService.createUser(user).subscribe(
-      //x=>this.registerForm=x); 
+      
       data => console.log(user), error => console.log(error));
     this.registerSuccess = true;
 
     //registration success
     this.router.navigate(['/login']);
 
+    alert("Registration Successfull..")
+
   }
   
-/*   upload() {
-    console.log("registered")
-  } */
+
 
   password1(registerForm: FormGroup) {
     const { value: password } = registerForm.get('password');
@@ -93,8 +93,7 @@ export class RegisterComponent implements OnInit {
     const id = Math.random().toString(36).substring(2);
   this.ref = this.afStorage.ref(id);
   this.task = this.ref.put(event.target.files[0]);
-  // this.getDownloadURL = this.ref.getDownloadURL();
-  // console.log(this.getDownloadURL);
+ 
   this.task.snapshotChanges().pipe(
     finalize(() => {
       this.ref.getDownloadURL().subscribe(url => {

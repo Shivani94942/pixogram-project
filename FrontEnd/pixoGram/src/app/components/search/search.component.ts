@@ -59,6 +59,7 @@ export class SearchComponent implements OnInit {
   logout(){
     sessionStorage.clear();
     console.log("logout")
+    alert("Logged out successfully...");
   }
 
 

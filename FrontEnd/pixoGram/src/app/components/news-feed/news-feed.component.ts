@@ -41,8 +41,6 @@ export class NewsFeedComponent implements OnInit {
     for(let i=0;this.fllwmodel.length ; i++){
       let newid = this.fllwmodel[i].userid;
       this.feedusers[i+1]=newid;
-     // this.fllwmodel[i]=this.
-     //console.log(this.feedusers[i])
 
      this.uploadService.getUserMedia(this.feedusers[i]).subscribe(
       src => {
@@ -57,17 +55,11 @@ export class NewsFeedComponent implements OnInit {
   
   }  
   )
-
-/* for(let k=0;this.feedusers.length;k++){
-  console.log(this.feedusers[k] + " out")
-} */
-
   }
-
-
   logout(){
     sessionStorage.clear();
     console.log("logout")
+    alert("Logged out successfully...");
   }
 
 

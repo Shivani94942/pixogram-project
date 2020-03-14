@@ -37,8 +37,7 @@ export class MyMediaComponent implements OnInit {
       src => {
         console.log(src);
         this.media = src;
-        /* this.myMedia=JSON.stringify(src);
-    console.log(this.myMedia) */
+        
       },
       error => console.log(error),
       () => {
